@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}Login Page{% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="border rounded p-4 mx-auto login-form container">
+        <form method="post">
+            {% csrf_token %}
+            <h2 class="m-2 text-center">Login Form</h2>
+            {{ form|crispy }}
+            <p class="text-center">To register click <a href="/signup">here</a></p>
+            <button class="btn btn-primary form-control mt-2" type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
